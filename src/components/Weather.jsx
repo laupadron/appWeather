@@ -35,15 +35,14 @@ const Weather = () => {
   navigator.geolocation.getCurrentPosition(success)
  },[]);
  
-// background activ
 
 
  
 
  console.log(weather)
  return (
-  <div className='App' style={{backgroundImage:(time>"19 PM"&& time<"5 AM")?`url(${backgroun2})`:`url(${background1})`,backgroundImage:(time>"7:00:00 PM"&& time<"5:00:00 AM")?`url(${backgroun2})`:`url(${background1})`}} >
-   <header className='header' style={{color:background1 ? "black":"white" }}>
+  <div className='App' style={{backgroundImage:(time>"19:00:00 PM"&& time<"5:00:00 AM")?`url(${backgroun2})`:`url(${background1})`}} >
+   <header className='header' style={{color:"white"}}>
     <h1>The Weather Now</h1>
    </header>
    <main className='app-body'>
