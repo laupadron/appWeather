@@ -42,8 +42,8 @@ const Weather = () => {
 
  console.log(weather)
  return (
-  <div className='App' style={{backgroundImage:(time>"19 PM"&& time<"5 AM")?`url(${backgroun2})`:`url(${background1})`,backgroundImage:(time>"7 PM"&& time<"5 AM")?`url(${backgroun2})`:`url(${background1})`}} >
-   <header className='header' style={{color:(time>"19 PM" && time < "5 AM")? "white":"black",color:(time>"7 PM" && time < "5 AM")? "white":"black" }}>
+  <div className='App' style={{backgroundImage:(time>"19 PM"&& time<"5 AM")?`url(${backgroun2})`:`url(${background1})`,backgroundImage:(time>"7:00:00 PM"&& time<"5:00:00 AM")?`url(${backgroun2})`:`url(${background1})`}} >
+   <header className='header' style={{color:background1 ? "black":"white" }}>
     <h1>The Weather Now</h1>
    </header>
    <main className='app-body'>
