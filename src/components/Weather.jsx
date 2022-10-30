@@ -6,9 +6,15 @@ import backgroun2 from "../assets/noche.jpg";
 const Weather = () => {
  // obtengo la hora local
  const tiempoTranscurrido = Date.now();
- const time = new Date(tiempoTranscurrido).toLocaleTimeString()
- const hoy= new Date (tiempoTranscurrido).toDateString()
- console.log( typeof(time))
+ const time = new Date(tiempoTranscurrido).toLocaleTimeString();
+ const hoy= new Date (tiempoTranscurrido).toDateString();
+ const [actualTime,setActualTime]= useState(0);
+ // actualizacion de hs en pantalla
+ const timeActual =()=>{
+  setActualTime(actualTime+1)
+ }
+ setInterval(timeActual,1000);
+ 
  
    
  
@@ -17,8 +23,8 @@ const Weather = () => {
  const[isCelsius,setIsCelsius]= useState(true);
  
  // convertir a celsius
- const tempCelsius =  (weather.main?.temp-273.15).toFixed()
-  const sensCelsius =(weather.main?.feels_like-273.15).toFixed()
+ const tempCelsius =  (weather.main?.temp-273.15).toFixed();
+  const sensCelsius =(weather.main?.feels_like-273.15).toFixed();
  
   
  useEffect(()=>{
@@ -30,9 +36,9 @@ const Weather = () => {
    const lon= pos.coords.longitude;
    
    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=e3e7f727e11e921d57ca8bdcfef156ef`)
-   .then(res=> setWeather(res.data))
+   .then(res=> setWeather(res.data));
   }
-  navigator.geolocation.getCurrentPosition(success)
+  navigator.geolocation.getCurrentPosition(success);
  },[]);
  
 
@@ -51,7 +57,7 @@ const Weather = () => {
      <p>{hoy} {time}</p>
      <img src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
      <p className='description'>{weather.weather?.[0]?.description}</p>
-     <i class="fa-solid fa-temperature-three-quarters"></i>
+     <i className="fa-solid fa-temperature-three-quarters"></i>
      <h3>Temperature: {isCelsius? tempCelsius:(tempCelsius*1.8+32).toFixed()}
       {isCelsius? "°C":"°F"}
      </h3>
@@ -62,10 +68,10 @@ const Weather = () => {
     </section>
     <section className='aditional-information'>
      <h3>Additional data</h3>
-     <p><i class="fa-solid fa-droplet"></i> Humidity: {weather.main?.humidity} %</p>
-     <p><i class="fa-solid fa-cloud-arrow-down"></i> Pressure: {weather.main?.pressure} mbar</p>
-     <p><i class="fa-solid fa-eye"></i> Visibility: {weather.visibility/1000} km</p>
-     <p><i class="fa-solid fa-wind"></i> Wind Speed: {weather.wind?.speed} km/h</p>
+     <p><i className="fa-solid fa-droplet"></i> Humidity: {weather.main?.humidity} %</p>
+     <p><i className="fa-solid fa-cloud-arrow-down"></i> Pressure: {weather.main?.pressure} mbar</p>
+     <p><i className="fa-solid fa-eye"></i> Visibility: {weather.visibility/1000} km</p>
+     <p><i className="fa-solid fa-wind"></i> Wind Speed: {weather.wind?.speed} km/h</p>
     </section>
    </main>
    
