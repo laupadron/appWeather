@@ -1,0 +1,76 @@
+*{
+ margin: 0;
+ box-sizing: border-box;
+}
+body{
+ font-family: 'Montserrat', sans-serif;
+
+ 
+}
+.App{
+ background-repeat:no repeat;
+ background-position: center;
+ transition: 0.4s ease-out;
+ display: flex;
+ flex-direction: column;
+ justify-content:center;
+ align-items:center;
+ height: 100vh;
+}
+
+
+.header{
+ display: flex;
+ justify-content:space-around;
+ align-items:center;
+}
+.header p{
+ align-self: center;
+ justify-self: flex-start;
+}
+.app-body{
+ padding: 1rem 1rem 2rem 1rem;
+border-radius: 10%;
+box-shadow:  1rem 3rem rgba(0,0,0,.175);
+ background-color:#EDE4E0;
+ width:fit-content;
+ margin-top: 1rem;
+ display: flex;
+ flex-direction: column;
+ justify-content:center;
+ align-items:center;
+}
+.icon-information{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.icon-information button{
+ width: 10rem;
+ height: 2rem;
+ margin-top: 1rem;
+}
+.aditional-information{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin-top: 1rem;
+ gap: 1rem;
+}
+i{
+ color: blue;
+}
+
+button{
+ border-radius: 1rem;
+ border: none;
+ background-color: blue;
+}
+.description{
+ padding-bottom: 1rem;
+}
+.icon-information i{
+ margin-bottom: 1rem;
+}
