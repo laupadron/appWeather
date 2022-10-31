@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import background1 from "../assets/soleado.jpg";
 import backgroun2 from "../assets/noche.jpg";
 
+
+
 const Weather = () => {
  // obtengo la hora local
  const tiempoTranscurrido = Date.now();
